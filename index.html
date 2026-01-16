@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Menu Secreto</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #000000, #1a001f, #000000);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: rgba(20,0,30,0.9);
+    width: 90%;
+    max-width: 500px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px #9b4dff;
+}
+
+h1 {
+    text-align: center;
+    color: #b86bff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #9b4dff;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+button {
+    background: linear-gradient(135deg, #6a00ff, #b44cff);
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #9b4dff;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #c77dff;
+}
+
+.menu {
+    display: none;
+    margin-top: 20px;
+    animation: fade 0.4s ease;
+}
+
+.menu.active {
+    display: block;
+}
+
+@keyframes fade {
+    from {opacity:0; transform: translateY(10px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+a {
+    color: #c77dff;
+    text-decoration: none;
+    display: block;
+    margin: 6px 0;
+}
+
+.back {
+    margin-top: 15px;
+    background: #222;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🤫 MENU SECRETO</h1>
+
+    <div class="buttons" id="mainMenu">
+        <button onclick="openMenu(1)">💎 Apps Premium</button>
+        <button onclick="openMenu(2)">📺 Streamers</button>
+        <button onclick="openMenu(3)">❓ Dúvidas</button>
+        <button onclick="openMenu(4)">📘 Tutorial</button>
+    </div>
+
+    <!-- MENU 1 -->
+    <div class="menu" id="menu1">
+        <h2>💎 Apps Premium</h2>
+        <p>Apps Premium grátis.</p><br>
+
+        <a href="https://www.mediafire.com/file/xjge8wi9xescxc9/GG+Mouse+Pro_2.3.13_opt_opt_r.apk/file?dkey=0zh7ohc8k3s&r=187" target="_blank">
+            👉 Baixar GG Mouse Pro Premium
+        </a>
+
+        <p>Faça login, execute seu jogo e pronto: GG Premium.</p><br>
+
+        <a href="http://Tekmods.com" target="_blank">
+            👉 Tekmods — todos os apps Premium, YouCine (filmes no cinema) e outros apps Premium free.
+        </a>
+
+        <br>
+        <button class="back" onclick="backMenu()">⬅ Voltar</button>
+    </div>
+
+    <!-- MENU 2 -->
+    <div class="menu" id="menu2">
+        <h2>📺 Ativação de Contas Streamers</h2>
+
+        <a href="https://t.me/grupoativacaogratis" target="_blank">
+            👉 Grupo Principal (ativação de contas via TV)
+        </a>
+
+        <a href="https://t.me/+8d2ylXv45ew5NGQx" target="_blank">
+            👉 Contas (lembrando: nem todas funcionam)
+        </a>
+
+        <a href="https://t.me/+ixt9yjeMfTQxODQx" target="_blank">
+            👉 Menu de doações
+        </a>
+
+        <br>
+        <p>⚠️ Por favor tenha paciência. Nem sempre ativa na hora, pode demorar até 30 minutos.</p>
+
+        <br>
+        <button class="back" onclick="backMenu()">⬅ Voltar</button>
+    </div>
+
+    <!-- MENU 3 -->
+    <div class="menu" id="menu3">
+        <h2>❓ Suporte</h2>
+
+        <a href="https://instagram.com/gus_henrique_ifpr" target="_blank">
+            👉 @gus_henrique_ifpr
+        </a>
+
+        <br>
+        <button class="back" onclick="backMenu()">⬅ Voltar</button>
+    </div>
+
+    <!-- MENU 4 -->
+    <div class="menu" id="menu4">
+        <h2>📘 Tutorial</h2>
+        <p>
+        1️⃣ Escolha um menu.<br>
+        2️⃣ Clique no link.<br>
+        3️⃣ Aguarde abrir.<br>
+        4️⃣ Leia as instruções.<br>
+        5️⃣ Aproveite os recursos.
+        </p>
+
+        <br>
+        <button class="back" onclick="backMenu()">⬅ Voltar</button>
+    </div>
+
+</div>
+
+<script>
+function openMenu(num){
+    document.getElementById("mainMenu").style.display = "none";
+
+    document.querySelectorAll(".menu").forEach(m => {
+        m.classList.remove("active");
+    });
+
+    document.getElementById("menu"+num).classList.add("active");
+}
+
+function backMenu(){
+    document.querySelectorAll(".menu").forEach(m => {
+        m.classList.remove("active");
+    });
+
+    document.getElementById("mainMenu").style.display = "grid";
+}
+</script>
+
+</body>
+  </html>
